@@ -107,9 +107,27 @@ module.exports = (env, argv) => {
                     },
                   },
                   settings: {
-                    react: {
-                      version: 'detect',
+                    'import/resolver': {
+                      'node': {
+                        'extensions': [
+                          '.js',
+                          '.jsx',
+                        ],
+                        'paths': [
+                          paths.appSrc,
+                        ],
+                      },
                     },
+                    'react': {
+                      'version': 'detect',
+                    },
+                  },
+                  rules: {
+                    'react/jsx-filename-extension': [
+                      1, {
+                        'extensions': ['.js', '.jsx'],
+                      },
+                    ],
                   },
                 },
                 ignore: false,
