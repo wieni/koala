@@ -1,0 +1,22 @@
+{
+  "name": "koala",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "setup": "koala setup",
+    "build": "koala build",
+    "start": "koala start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "lerna": "^3.10.7",
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1",
+    "react-hot-loader": "^4.6.3",
+    "webfontloader": "^1.6.28"
+  }
+}
