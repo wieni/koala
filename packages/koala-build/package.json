@@ -1,11 +1,8 @@
 {
-  "name": "@koala/build",
+  "name": "@wieni/koala-build",
   "version": "0.0.6",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
-    "build": ""
-  },
   "bin": {
     "koala": "./bin/koala.js"
   },
@@ -47,7 +44,7 @@
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
   },
-  "gitHead": "ffcfddd6945fd6e999c8b333126943cedbb478f4",
+  "gitHead": "fcadf9b3b01a1aac4afd18b1ed67c3a748e513fe",
   "publishConfig": {
     "access": "public"
   }

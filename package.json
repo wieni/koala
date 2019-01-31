@@ -1,5 +1,5 @@
 {
-  "name": "koala",
+  "name": "@wieni/koala",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
