@@ -17,5 +17,8 @@
     "react-dom": "^16.8.0-alpha.1",
     "react-hot-loader": "^4.6.3",
     "webfontloader": "^1.6.28"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
