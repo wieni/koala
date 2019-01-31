@@ -13,6 +13,7 @@ const App = () => {
     <React.Fragment>
       <h1>Koala</h1>
       <h2>{version}</h2>
+      <p>🐨 loves your code.</p>
     </React.Fragment>
   );
 };
