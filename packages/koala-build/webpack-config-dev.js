@@ -1,21 +1,12 @@
 const devServer = (paths) => ({
+  compress: true,
   hot: true,
   inline: true,
   port: 3000,
   publicPath: '/',
-  stats: {
-    // Config for minimal console.log mess.
-    assets: false,
-    builtAt: false,
-    colors: true,
-    chunks: false,
-    chunkModules: false,
-    entrypoints: false,
-    hash: false,
-    modules: false,
-    timings: false,
-    version: false,
-  },
+  quiet: true,
+  stats: 'none',
+  overlay: false,
 });
 
 module.exports = devServer;

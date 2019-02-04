@@ -16,6 +16,8 @@ module.exports = (env, argv) => {
   isEnvDevelopment = !isProduction(argv);
   isEnvProduction = isProduction(argv);
 
+  const sourceMap = isEnvDevelopment && config.sourceMap;
+
   const globals = helpers.transformGlobalsToDefine(config.globals);
 
   const cssRegex = /\.css$/;
@@ -43,13 +45,13 @@ module.exports = (env, argv) => {
             stage: 3,
           }),
         ],
-        sourceMap: false,
+        sourceMap: sourceMap,
       },
     },
     {
       loader: 'sass-loader',
       options: {
-        sourceMap: true,
+        sourceMap: sourceMap,
       },
     },
   ].filter(Boolean))
@@ -59,7 +61,7 @@ module.exports = (env, argv) => {
       ...devServer(paths)
     },
     mode: isEnvProduction ? 'production' : 'development',
-    devtool: isEnvProduction ? '' : 'source-map',
+    devtool: sourceMap ? '' : 'eval-source-map',
     entry: [
       isEnvDevelopment && require.resolve('webpack-dev-server/client') + '?/',
       isEnvDevelopment && require.resolve('webpack/hot/dev-server'),
@@ -123,11 +125,14 @@ module.exports = (env, argv) => {
                     },
                   },
                   rules: {
+                    'no-unused-vars': 'warn',
                     'react/jsx-filename-extension': [
                       1, {
                         'extensions': ['.js', '.jsx'],
                       },
                     ],
+                    'react/jsx-one-expression-per-line': 'off',
+                    'import/prefer-default-export': 'off',
                   },
                 },
                 ignore: false,
@@ -261,7 +266,7 @@ module.exports = (env, argv) => {
             parallel: true,
             // Enable file caching
             cache: true,
-            sourceMap: false,
+            sourceMap: sourceMap,
           }),
         ]
       }

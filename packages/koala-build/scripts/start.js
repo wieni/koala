@@ -11,7 +11,7 @@ const compiler = webpack(webpackConfig);
 const server = new WebpackDevServer(compiler, webpackConfig.devServer);
 
 server.listen(3000, '127.0.0.1', () => {
-  // clearConsole();
+  clearConsole();
   openBrowser('http://127.0.0.1:3000');
-  console.log(`🌍 Starting server on ${chalk.yellow('http://localhost:8080')}`);
+  console.log(`🌍 Starting server on ${chalk.yellow('http://localhost:3000')}`);
 });

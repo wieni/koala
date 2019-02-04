@@ -1,10 +1,11 @@
 const paths = require('./paths');
 
 module.exports = {
+  sourceMap: true,
   /**
    * (*) Enable debug
    */
-  debug: true,
+  debug: false,
   /**
    *  (*) Enable to cleanup the /build folder each time.
    */
